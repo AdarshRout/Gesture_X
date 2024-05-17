@@ -2,7 +2,6 @@ from flask import Flask, render_template, Response, request
 import mediapipe as mp
 import cv2
 import os
-import pyautogui
 import subprocess
 import numpy as np
 from scipy.spatial.distance import euclidean
@@ -26,6 +25,32 @@ available_tasks = [
     'close window', 'switch window', 'minimise', 'maximise', 'Screenshot',
     'Lock', 'open chrome', 'close chrome'
 ]
+
+def perform_task(task, recognized_gesture):
+    if task == 'close window':
+        pyautogui.hotkey('alt', 'f4')
+        print("Window closed using gesture:", recognized_gesture)
+    elif task == 'switch window':
+        pyautogui.hotkey('alt', 'tab')
+        print("Window switched using gesture:", recognized_gesture)
+    elif task == 'minimise':
+        pyautogui.hotkey('win', 'd')
+        print("Window minimised using gesture:", recognized_gesture)
+    elif task == 'maximise':
+        pyautogui.hotkey('win', 'up')
+        print("Window maximised using gesture:", recognized_gesture)
+    elif task == 'Screenshot':
+        pyautogui.hotkey('win', 'prtsc')
+        print("Screenshot of Entire Screen using gesture:", recognized_gesture)
+    elif task == 'Lock':
+        os.system("rundll32.exe user32.dll,LockWorkStation")
+        print("Screen Locked using gesture:", recognized_gesture)
+    elif task == 'open chrome':
+        subprocess.Popen(["C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"])
+        print("Google Chrome opened using gesture:", recognized_gesture)
+    elif task == 'close chrome':
+        os.system("taskkill /f /im chrome.exe /t")
+        print("Google Chrome closed using gesture:", recognized_gesture)
 
 def generate_frames():
     global gesture_count, generate_frames_flag
@@ -54,31 +79,7 @@ def generate_frames():
 
                     if recognized_gesture:
                         task = gestures_tasks[recognized_gesture]
-                        # Perform the assigned task
-                        if task == 'close window':
-                            pyautogui.hotkey('alt', 'f4')
-                            print("Window closed using gesture:", recognized_gesture)
-                        elif task == 'switch window':
-                            pyautogui.hotkey('alt', 'tab')
-                            print("Window switched using gesture:", recognized_gesture)
-                        elif task == 'minimise':
-                            pyautogui.hotkey('win', 'd')
-                            print("Window minimised using gesture:", recognized_gesture)
-                        elif task == 'maximise':
-                            pyautogui.hotkey('win', 'up')
-                            print("Window maximised using gesture:", recognized_gesture)
-                        elif task == 'Screenshot':
-                            pyautogui.hotkey('win', 'prtsc')
-                            print("Screenshot of Entire Screen using gesture:", recognized_gesture)
-                        elif task == 'Lock':
-                            os.system("rundll32.exe user32.dll,LockWorkStation")
-                            print("Screen Locked using gesture:", recognized_gesture)
-                        elif task == 'open chrome':
-                            subprocess.Popen(["C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"])
-                            print("Google Chrome opened using gesture:", recognized_gesture)
-                        elif task == 'close chrome':
-                            os.system("taskkill /f /im chrome.exe /t")
-                            print("Google Chrome closed using gesture:", recognized_gesture)
+                        perform_task(task, recognized_gesture)
 
             ret, buffer = cv2.imencode('.jpg', image)
             frame = buffer.tobytes()
