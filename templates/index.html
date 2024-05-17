@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gesture Recognition</title>
+    <style>
+        body {
+            background-color: #24582A;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        #video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        #video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #capture-btn, #assign-btn, #reset-btn {
+            margin: 0 10px;
+            background-color: #DDF832;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #task-select {
+            margin: 0 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            background-color: #24582A;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <img id="video" src="{{ url_for('video') }}" alt="Video Feed">
+    </div>
+    <div id="controls">
+        <button id="capture-btn">Capture Now</button>
+        <select id="task-select">
+            <option value="">Select Task</option>
+            {% for task in tasks %}
+            <option value="{{ task }}">{{ task }}</option>
+            {% endfor %}
+        </select>
+        <button id="assign-btn">Assign Task</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+    <h3>Assigned Tasks:</h3>
+    <ul>
+        {% for gesture, task in assigned_tasks.items() %}
+        <li>{{ gesture }}: {{ task }}</li>
+        {% endfor %}
+    </ul>
+    <script>
+        const captureBtn = document.getElementById('capture-btn');
+        const assignBtn = document.getElementById('assign-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const taskSelect = document.getElementById('task-select');
+
+        captureBtn.addEventListener('click', () => {
+            fetch('/capture', { method: 'POST' })
+                .then(response => {
+                    console.log('Gesture captured');
+                })
+                .catch(error => {
+                    console.error('Error capturing gesture:', error);
+                });
+        });
+
+        assignBtn.addEventListener('click', () => {
+            const task = taskSelect.value;
+            if (task) {
+                fetch('/assign', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `task=${encodeURIComponent(task)}`
+                })
+                    .then(response => response.text())
+                    .then(message => {
+                        console.log(message);
+                        alert(message); // Display the message in an alert
+                    })
+                    .catch(error => {
+                        console.error('Error assigning task:', error);
+                    });
+            } else {
+                console.error('Please select a task');
+            }
+        });
+
+        resetBtn.addEventListener('click', () => {
+            window.location.reload(); // Refresh the page
+        });
+    </script>
+</body>
+</html>
