@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    user-select: none;
+    scroll-behavior: smooth;
+    transition: .3s ease-in;
+}
+
+body {
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(36, 88, 42, 0.39);
+    backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(36, 88, 42);
+}
+
+.background-image {
+    background: url('assets/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+
+/* NAVBAR */
+
+nav.navbar {
+    background-color: rgba(36, 88, 42, 0.525);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar ul.navbar {
+    padding: 25px;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar li.navbar-tab {
+    padding-left: 27px;
+}
+
+.navbar-logo {
+    flex: 1;
+    padding-left: 85px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+} 
+
+.navbar-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-tab {
+    padding-right: 25px;
+    font-size: 18px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    transition: .4s ease;
+}
+
+.navbar li.navbar-toggle {
+    display: none;
+}
+
+.navbar li.navbar-tab a:hover,
+.navbar li.navbar-tab a.active {
+    color: yellow;
+}
+
+.active {
+    color: yellow;
+}
+
+
+
+/* HOME */
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.home-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.home-text p.header {
+    font-size: 100px;
+    font-weight: 600;
+}
+
+.home-text p.sub-header {
+    font-size: 30px;
+    text-transform: capitalize;
+    font-size: 800;
+}
+
+button.home-start-now {
+    font-size: 17px;
+    font-weight: 600;
+    color: rgba(36, 88, 42);
+    padding: 15px 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: yellow;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+button:hover {
+    background-color: rgba(36, 88, 42);
+    border-color: yellow;
+    color: yellow;
+}
+
+
+
+
+/* ABOUT */
+
+.about {
+    background-color: rgba(36, 88, 42, 0.525);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 80px;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.about-header-heading {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.about-header-subheading {
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.left-side {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 118px;
+}
+
+.right-side {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 80px 80px;
+}
+
+.left-side p.header {
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.left-side p.text {
+    font-size: 20px;
+}
+
+.right-side img {
+    width: 400px;
+    height: 400px;
+}
+
+button.about-learn-more {
+    font-size: 17px;
+    font-weight: 600;
+    color: rgba(36, 88, 42);
+    padding: 15px 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: yellow;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+button:hover {
+    background-color: rgba(36, 88, 42);
+    border-color: yellow;
+    color: yellow;
+}
+
+
+
+
+/* USERS SAY */
+
+.usersSay {
+    background-color: rgba(150, 206, 137, 0.655);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 80px;
+    color: rgba(36, 88, 42);
+}
+
+.usersSay-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.usersSay-header-heading {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.usersSay-header-subheading {
+    font-size: 22px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.usersSay-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 80px;
+    gap: 80px;
+}
+
+.review-1,
+.review-2,
+.review-3 {
+    padding: 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 17px;
+    background: rgba(36, 88, 42);
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+    color: rgba(150, 206, 137);
+}
+
+.review-name {
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.review-description {
+    padding-top: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+
+
+
+/* FOOTER */
+
+
+
+footer {
+    background-color: rgba(36, 88, 42, 0.525);
+    backdrop-filter: blur(10px);
+}
+
+.footer-container {
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.footer-title a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.contacts {
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    gap: 80px;  
+}
+
+.contacts img {
+    width: 50px;
+    height: 50px;
+}
+
+.mail, .address, .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 80px;
+    gap: 20px;
+}
+
+.newsletter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+    background: rgba(150, 206, 137);
+    color: rgba(36, 88, 42);
+    border-radius: 50% 50% 0 0;
+    padding-bottom: 30px;
+}
+
+.newsletter p.newsletter-header {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.email p {
+    font-size: 19px;
+}
+
+.email input[type=email] {
+    width: 310px;
+    height: 40px;
+    background: rgba(201, 197, 197, 0.402);
+    border-color: rgba(201, 197, 197, 0.402);
+    border-radius: 5px;
+}
+
+button.subscribe {
+    font-size: 17px;
+    font-weight: 600;
+    color: yellow;
+    padding: 15px 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: rgba(36, 88, 42);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+button.subscribe:hover {
+    background-color: rgba(150, 206, 137);
+    border-color: rgba(36, 88, 42);
+    color: rgba(36, 88, 42);
+}
