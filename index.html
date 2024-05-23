@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestureX</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="background-image">
+            <!-- NAVBAR -->
+
+            <nav class="navbar">
+                <ul class="navbar">
+                    <li class="navbar-logo">
+                        <a href="#home">
+                            <div class="nav-logo">
+                                <img src="assets/logo.png">
+                                <p>GestureX</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar-toggle"><i class="fa-solid fa-bars"></i></li>
+                    <li class="navbar-tab">
+                        <a href="#home" class="nav-home active" onclick="activeHome()">
+                            Home
+                        </a>
+                    </li>
+                    <li class="navbar-tab">
+                        <a href="#about" class="nav-about" onclick="activeAbout()">
+                            About
+                        </a>
+                    </li>
+                    <li class="navbar-tab">
+                        <a href="#contact" class="nav-contact" onclick="activeContact()">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+
+            <!-- HOME -->
+
+            <div id="home" class="home">
+                <div class="home-text">
+                    <p class="header">Revolutionize Your</p>
+                    <p class="header">Workflow</p>
+                    <p class="sub-header">Automate through your fingertips</p>
+                </div>
+                <button class="home-start-now" onclick="startNow()">Start Now</button>
+            </div>
+
+
+
+
+
+            <!-- ABOUT -->
+
+
+            <section id="about" class="about">
+                <div class="about-header">
+                    <p class="about-header-heading">About Us</p>
+                    <p class="about-header-subheading">Reliable & Honest</p>
+                </div>
+                <div class="about-content">
+                    <div class="left-side">
+                        <p class="header">Our Process</p>
+                        <p class="text">Hey there! GestureX is a cool service that lets you record gestures and assign
+                            tasks to be done using those gestures. Our team is made up of skilled pros who are totally
+                            committed to providing fast, efficient, and honest service. We love to keep in touch with
+                            our users throughout the project to make sure they're happy with what we're doing.</p>
+                    </div>
+                    <div class="right-side">
+                        <img src="assets/about.jpg">
+                    </div>
+                </div>
+                <button class="about-learn-more">Learn More</button>
+            </section>
+
+
+
+
+
+            <!-- USERS SAY -->
+
+
+
+            <section class="usersSay">
+                <div class="usersSay-header">
+                    <p class="usersSay-header-heading">What Our Users Say</p>
+                    <p class="usersSay-header-subheading">At GestureX, we value our users' feedback to improve our
+                        mechanisms. See what our satisfied users have to say below.</p>
+                </div>
+                <div class="usersSay-content">
+                    <div class="review-1">
+                        <div class="review-name">Ankit Sahoo</div>
+                        <div class="review-description">"GestureX helped me streamline my workflow and save time. Their
+                            team was professional and
+                            efficient, and I'm thrilled with the results."</div>
+                    </div>
+                    <div class="review-2">
+                        <div class="review-name">Soham Chatterjee</div>
+                        <div class="review-description">"I was blown away by GestureX's innovative approach to
+                            automation. They provided exceptional
+                            service and exceeded my expectations."</div>
+                    </div>
+                    <div class="review-3">
+                        <div class="review-name">Simandhar Kumar Baid</div>
+                        <div class="review-description">"GestureX's team was knowledgeable and dedicated to helping me
+                            achieve my automation goals. I highly recommend their services!"</div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+            <!-- CONTACT -->
+
+
+
+            <section id="contact">
+                <footer>
+                    <div class="footer-container">
+                        <div class="footer-title"><a href="#home">GestureX</a></div>
+                        <div class="contacts">
+                            <div class="mail">
+                                <img src="https://img.icons8.com/ios/100/ffffff/mail.png" alt="mail" />
+                                <p>abhishekmallick@hotmail.com</p>
+                            </div>
+                            <div class="address">
+                                <img src="https://img.icons8.com/ios/50/ffffff/marker--v1.png" alt="marker--v1" />
+                                <p>KIIT Road, Patia, Bhubaneswar, Odisha</p>
+                            </div>
+                            <div class="number">
+                                <img src="https://img.icons8.com/ios/100/ffffff/phone--v1.png" alt="phone--v1" />
+                                <p>+91-9969-123467</p>
+                            </div>
+                        </div>
+                        <div class="newsletter">
+                            <p class="newsletter-header">Stay informed, join our newsletter</p>
+                            <div class="email">
+                                <p>Enter your email here.*</p>
+                                <input type="email">
+                            </div>
+                            <button class="subscribe">Subscribe</button>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
