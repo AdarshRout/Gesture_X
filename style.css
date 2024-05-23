@@ -113,15 +113,6 @@ nav.navbar {
 }
 
 
-/* RESPONSIVE */
-
-@media screen and (min-width: 680) {
-    .navbar li.navbar-toggle {
-        display: block;
-    }
-}
-
-
 
 /* HOME */
 
@@ -171,10 +162,6 @@ button:hover {
     background-color: rgba(36, 88, 42);
     border-color: yellow;
     color: yellow;
-}
-
-@media screen and (max-width: 800px) {
-    
 }
 
 
@@ -446,61 +433,4 @@ button.subscribe:hover {
     background-color: rgba(150, 206, 137);
     border-color: rgba(36, 88, 42);
     color: rgba(36, 88, 42);
-}
-
-
-
-@media screen and (max-width: 1000px) {
-
-    .home-text p.header {
-        font-size: 50px;
-    }    
-
-    .home-text p.sub-heading {
-        font-size: 30px;
-    }
-    
-    .about-header-heading {
-        font-size: 50px;
-    }    
-
-    .about-header-subheading {
-        font-size: 30px;
-    }
-
-    .left-side {
-        padding-top: 80px;
-        font-size: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .left-side p.header {
-        font-size: 50px;
-    }
-    
-    .left-side {
-        padding-top: 80px;
-        font-size: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .about-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 0px;
-    }
-
-    .right-side img {
-        width: 300px;
-        height: 300px;
-    }
 }
