@@ -1,29 +1,11 @@
-var navHome = document.querySelector('.nav-home');
-var navAbout = document.querySelector('.nav-about');
-var navContact = document.querySelector('.nav-contact');
 var sections = document.querySelectorAll('section');
 var navLinks = document.querySelectorAll('nav ul li a');
+var menu = document.querySelector('.navbar-toggle')
+var btn = document.querySelector('.navbar-toggle i');
+var navbar = document.querySelector('.navbar-group');
 
 function startNow() {
     window.location.href = 'sign-up/signup-page.html'
-}
-
-function activeHome() {
-    navHome.classList.add("active");
-    navAbout.classList.remove("active");
-    navContact.classList.remove("active");
-}
-
-function activeAbout() {
-    navHome.classList.remove("active");
-    navAbout.classList.add("active");
-    navContact.classList.remove("active");
-}
-
-function activeContact() {
-    navHome.classList.remove("active");
-    navAbout.classList.remove("active");
-    navContact.classList.add("active");
 }
 
 window.onscroll = () => {
@@ -42,3 +24,13 @@ window.onscroll = () => {
     })
 }
 
+function menuBtn() {
+    if(btn.classList.contains("fa-bars")) {
+        btn.classList.replace("fa-bars", "fa-xmark");
+        navbar.style.display = "block";
+    }
+    else {
+        btn.classList.replace("fa-xmark", "fa-bars");
+        navbar.style.display = "none";
+    }
+}
