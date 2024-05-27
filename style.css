@@ -88,6 +88,11 @@ nav.navbar {
     height: 50px;
 }
 
+.navbar-group {
+    display: flex;
+    gap: 20px;
+}
+
 .navbar-tab {
     padding-right: 25px;
     font-size: 18px;
@@ -112,60 +117,6 @@ nav.navbar {
     color: yellow;
 }
 
-@media screen and (max-width: 800px) {
-
-    nav.navbar {
-        width: 100%;
-    }
-
-    .navbar ul {
-        flex-wrap: wrap;
-    }
-    
-    .navbar ul.navbar {
-        padding: 0;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    .navbar li.navbar-tab {
-        padding-left: 1rem;
-    }
-    
-    .navbar-logo p {
-        display: none;
-    }
-
-    .navbar li.navbar-toggle {
-        display: block;
-        padding-right: 20px;
-        font-size: 30px;
-    }
-
-    .navbar-logo {
-        padding-left: 2rem;
-    }
-
-    .navbar-tab {
-        width: 100%;
-        text-align: center;
-        padding: 20px 10px;
-        font-size: 20px;
-        transition: .4s ease-in;
-    }
-
-    .navbar-group {
-        position: fixed;
-        top: 80px;
-        right: 0;
-        background: rgba(36, 88, 42);
-        padding: 20px 20px;
-        width: 100%;
-        padding-bottom: 100vh;
-        display: none;
-    }
-}
-
 
 
 
@@ -180,6 +131,8 @@ nav.navbar {
     flex-direction: column;
     padding-top: 120px;
     padding-bottom: 80px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .home-text {
@@ -189,6 +142,7 @@ nav.navbar {
     justify-content: center;
     color: #fff;
     margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
 .home-text p.header {
@@ -234,6 +188,8 @@ button:hover {
     justify-content: center;
     flex-direction: column;
     padding-bottom: 80px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .about-header {
@@ -311,7 +267,6 @@ button:hover {
 
 
 
-
 /* USERS SAY */
 
 .usersSay {
@@ -379,7 +334,6 @@ button:hover {
     font-weight: 500;
     text-align: center;
 }
-
 
 
 
@@ -494,76 +448,4 @@ button.subscribe:hover {
     background-color: rgba(150, 206, 137);
     border-color: rgba(36, 88, 42);
     color: rgba(36, 88, 42);
-}
-
-
-
-@media screen and (max-width: 1000px) {
-
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    .navbar-logo p {
-        display: none;
-    }
-
-    .navbar-logo img {
-        padding-left: 0px;
-    }
-
-    .home-text {
-    }
-    
-    .home-text p.header {
-        font-size: 50px;
-    }    
-
-    .home-text p.sub-heading {
-        font-size: 30px;
-    }
-    
-    .about-header-heading {
-        font-size: 50px;
-    }    
-
-    .about-header-subheading {
-        font-size: 30px;
-    }
-
-    .left-side {
-        padding-top: 80px;
-        font-size: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .left-side p.header {
-        font-size: 50px;
-    }
-    
-    .left-side {
-        padding-top: 80px;
-        font-size: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .about-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 0px;
-    }
-
-    .right-side img {
-        width: 300px;
-        height: 300px;
-    }
 }
