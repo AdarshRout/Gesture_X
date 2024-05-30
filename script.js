@@ -11,7 +11,7 @@ function startNow() {
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
-        let offset = sec.offsetTop - 500;
+        let offset = sec.offsetTop - 150;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
@@ -27,10 +27,10 @@ window.onscroll = () => {
 function menuBtn() {
     if(btn.classList.contains("fa-bars")) {
         btn.classList.replace("fa-bars", "fa-xmark");
-        navbar.style.left = "0";
+        navbar.style.display = "block";
     }
     else {
         btn.classList.replace("fa-xmark", "fa-bars");
-        navbar.style.left = "-1000px";
+        navbar.style.display = "none";
     }
 }
