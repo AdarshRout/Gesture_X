@@ -120,15 +120,15 @@ section .color:nth-child(3) {
     color: #666;
 }
 
-.form .inputBox input[type="submit"] {
+.form .inputBox button {
     background: #fff;
     color: #666;
     max-width: 100px;
     cursor: pointer;
     margin-bottom: 20px;
     font-weight: 600;
-
-
+    font-size: 16px;
+    border-radius: 50px;
 }
 
 .forget a {
@@ -206,9 +206,9 @@ section .color:nth-child(3) {
     box-sizing: border-box;
 }
 
-.but {
+button {
     background-color: rgb(235, 126, 126);
-    padding: 0.8rem 2.3rem;
+    padding: 5px 10px;
     color: aliceblue;
     font-size: 20px;
     box-shadow: 5px 5px 7px 0px #0000003f;
@@ -219,27 +219,13 @@ section .color:nth-child(3) {
     /* Added transition for smooth hover effect */
 }
 
-.but:hover {
+button:hover {
     background-color: #ff7f7f;
     /* Change background color on hover */
     transform: translateY(-4px);
 }
 
-.but::before {
-    content: "";
-    background-color: black;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 7s;
-    z-index: 6;
-}
-
-.but:hover::before {
+button:hover::before {
     transform: scaleX(1);
 }
 
