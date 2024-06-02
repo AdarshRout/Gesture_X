@@ -4,6 +4,42 @@ var menu = document.querySelector('.navbar-toggle')
 var btn = document.querySelector('.navbar-toggle i');
 var navbar = document.querySelector('.navbar-group');
 
+// SPLASH SCREEN
+
+let intro = document.querySelector('.intro');
+let logo = document.querySelector('.intro-header');
+let logoSpan = document.querySelectorAll('.intro-logo');
+
+window.addEventListener('DOMContentLoaded', () => {
+
+    setTimeout(() => {
+        
+        logoSpan.forEach((span, idx) => {
+            setTimeout(() => {
+                span.classList.add('active1');
+            }, (idx + 1) * 400)
+        });
+
+        setTimeout(() => {
+
+            logoSpan.forEach((span, idx) => {
+
+                setTimeout(() => {
+                    span.classList.remove('active1');
+                    span.classList.add('fade');
+                }, (idx + 1) * 50)
+            })
+        }, 2000);
+
+        setTimeout(() => {
+            intro.style.top = '-100vh';
+        }, 2500);
+    });
+});
+
+
+
+
 function startNow() {
     window.location.href = 'sign-up/signup-page.html'
 }
@@ -27,10 +63,10 @@ window.onscroll = () => {
 function menuBtn() {
     if(btn.classList.contains("fa-bars")) {
         btn.classList.replace("fa-bars", "fa-xmark");
-        navbar.style.display = "block";
+        navbar.style.right = "0px";
     }
     else {
         btn.classList.replace("fa-xmark", "fa-bars");
-        navbar.style.display = "none";
+        navbar.style.right = "-1000px";
     }
 }

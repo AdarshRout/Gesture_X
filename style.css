@@ -8,7 +8,7 @@
 html {
     user-select: none;
     scroll-behavior: smooth;
-    transition: .3s ease-in;
+    transition: .3s ease-in-out;
 }
 
 body {
@@ -41,6 +41,55 @@ a {
 }
 
 
+/* SPLASH SCREEN */
+
+.intro {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #161616;
+    transition: 1s;
+}
+
+.intro-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+
+.intro img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.intro-logo {
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.intro-logo.active1 {
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.intro-logo.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
 
 /* NAVBAR */
 
@@ -60,7 +109,7 @@ nav.navbar {
 }
 
 .navbar ul.navbar {
-    padding: 25px;
+    padding: 15px;
 }
 
 .navbar li {
@@ -92,7 +141,7 @@ nav.navbar {
 .navbar-group {
     display: flex;
     gap: 20px;
-    transition: 0.2s ease-in;
+    transition: 0.15s ease-in;
 }
 
 .navbar-tab {
@@ -108,6 +157,10 @@ nav.navbar {
 
 .navbar li.navbar-toggle {
     display: none;
+}
+
+.navbar li.navbar-toggle i {
+    transition: 0.15s;
 }
 
 .navbar li.navbar-tab a:hover,
@@ -131,9 +184,8 @@ nav.navbar {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-top: 120px;
+    padding-top: 135px;
     padding-bottom: 80px;
-    flex-wrap: wrap;
     width: 100%;
 }
 
