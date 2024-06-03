@@ -24,10 +24,6 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
-app.get("/", (req, res) => {
-    res.render("after-login");
-});
-
 app.get("/login", (req, res) => {
     res.render("login-page");
 });
