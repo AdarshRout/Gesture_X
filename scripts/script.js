@@ -38,6 +38,10 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+app.get("/", (req, res) => {
+    res.render("home", {msg: req.flash("msg")});
+})
+
 
 
 function startNow() {
