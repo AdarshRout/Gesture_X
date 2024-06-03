@@ -13,5 +13,5 @@ function eyeball() {
 }
 
 function startNow() {
-    window.location.href = '../sign-up/signup-page.html'
+    window.location.href = '/signup'
 }

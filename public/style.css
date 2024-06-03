@@ -30,7 +30,7 @@ body {
 }
 
 .background-image {
-    background: url('assets/background.jpg');
+    background: url('../assets/background.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

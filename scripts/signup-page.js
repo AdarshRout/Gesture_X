@@ -13,5 +13,5 @@ function eyeball() {
 }
 
 function login() {
-    window.location.href = '../login-form/login-page.html';
+    window.location.href = '/login';
 }

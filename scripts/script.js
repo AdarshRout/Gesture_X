@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 function startNow() {
-    window.location.href = 'sign-up/signup-page.html'
+    window.location.href = '/signup'
 }
 
 window.onscroll = () => {
