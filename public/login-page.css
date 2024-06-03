@@ -207,20 +207,22 @@ section .color:nth-child(3) {
 }
 
 button {
-    background-color: rgb(235, 126, 126);
+    background-color: #ffffff;
     padding: 5px 10px;
-    color: aliceblue;
-    font-size: 20px;
+    color: #666;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 50px;
     box-shadow: 5px 5px 7px 0px #0000003f;
     position: relative;
     z-index: 10;
-    /* Lower z-index to ensure it's below pseudo-element */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    /* Added transition for smooth hover effect */
+    transition: .3s ease;
 }
 
 button:hover {
     background-color: #ff7f7f;
+    color: #fff;
     /* Change background color on hover */
     transform: translateY(-4px);
 }

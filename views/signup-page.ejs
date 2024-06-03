@@ -29,13 +29,12 @@
                     <h2>Signup Form</h2>
                     <form action="/signup" method="post">
                         <div class="inputBox">
-                            <input type="text" placeholder="Username" id="username">
+                            <label for="email"></label>
+                            <input type="email" name="email" placeholder="Email" id="email">
                         </div>
                         <div class="inputBox">
-                            <input type="email" placeholder="Email" id="email">
-                        </div>
-                        <div class="inputBox">
-                            <input type="password" placeholder="Password" id="password">
+                            <label for="password"></label>
+                            <input type="password" name="password" placeholder="Password" id="password">
                         </div>
                         <button type="submit" id="register">Sign Up</button>
                         <p class=" forget">Already have an account ?<a href="#" onclick="login()">Login</a></p>

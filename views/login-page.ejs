@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GestureX | Login</title>
+    <title>GestureX | Register</title>
     <link rel="stylesheet" href="../public/login-page.css">
     <link rel="stylesheet" href="../public/login-responsive.css">
+
 </head>
 
 <body>
-    <section>
+    <section class="signup">
         <div class="color"></div>
         <div class="color"></div>
 
@@ -28,17 +29,16 @@
                     <h2>Login Form</h2>
                     <form action="/login" method="post">
                         <div class="inputBox">
-                            <input type="text" placeholder="Username">
+                            <label for="email"></label>
+                            <input type="email" name="email" placeholder="Email" id="email">
                         </div>
                         <div class="inputBox">
-                            <input type="password" placeholder="Password">
+                            <label for="password"></label>
+                            <input type="password" name="password" placeholder="Password" id="password">
                         </div>
-                        <div class="inputBox">
-                            <button type="submit">Login</button>
-                        </div>
-                        <p class=" forget">Forgot Password ?<a href="#">Click Here</a></p>
-                        <p class=" forget">Don't have an account ?<a href="#" onclick="startNow()">Sign up</a></p>
-
+                        <button type="submit" id="register">Login</button>
+                        <p class="forget">Forgot Password ?<a href="#">Click Here</a></p>
+                        <p class="forget">Don't have an account ?<a href="#" onclick="startNow()">Sign up</a></p>
                     </form>
                 </div>
             </div>
