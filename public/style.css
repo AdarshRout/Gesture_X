@@ -41,6 +41,8 @@ a {
 }
 
 
+
+
 /* SPLASH SCREEN */
 
 .intro {
@@ -89,6 +91,10 @@ a {
     opacity: 0;
     transition: ease-in-out 0.5s;
 }
+
+
+
+
 
 
 /* NAVBAR */
@@ -210,6 +216,13 @@ nav.navbar {
     font-size: 800;
 }
 
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
 button.home-start-now {
     font-size: 17px;
     font-weight: 600;
@@ -227,6 +240,17 @@ button:hover {
     background-color: rgba(36, 88, 42);
     border-color: yellow;
     color: yellow;
+}
+
+button.register {
+    background: rgba(201, 197, 197, 0.402);
+    color: white;
+    font-weight: 600;
+}
+
+button.register:hover {
+    color: black;
+    background: rgba(201, 197, 197);
 }
 
 

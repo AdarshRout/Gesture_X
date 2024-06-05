@@ -39,6 +39,13 @@ app.get("/signup", (req, res) => {
 });
 
 
+// Serve the index.html file from the templates directory
+app.get('/index', (req, res) => {
+  res.sendFile(path.join(__dirname, '../templates', 'index.html'));
+});
+
+
+
 
 // Register User
 
@@ -77,6 +84,7 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login", async (req, res) => {
     try {
+
         // Finding the email entered from the database
 
         const check = await collection.findOne({email: req.body.email});
@@ -95,7 +103,7 @@ app.post("/login", async (req, res) => {
     catch {
         res.send('<script>alert("User not found! Please register"); window.location.href = "/signup"</script>');
     }
-})
+});
 
 
 
