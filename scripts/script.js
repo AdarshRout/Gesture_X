@@ -52,7 +52,7 @@ function login() {
 }
 
 function startNow() {
-    window.location.href = "/index";
+    window.location.href = "/fetch-data";
 }
 
 // Window onscroll active tabs change

@@ -1,63 +1,57 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>GestureX | Gesture Recognition</title>
-    <!-- <link rel="stylesheet" href="../public/pyscript.css"> -->
+    <title>Gesture Recognition</title>
+    <style>
+        body {
+            background-color: #24582A;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        #video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        #video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #capture-btn, #assign-btn, #reset-btn {
+            margin: 0 10px;
+            background-color: #DDF832;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #task-select {
+            margin: 0 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            background-color: #24582A;
+            color: #ffffff;
+        }
+    </style>
 </head>
-
-<style>
-    body {
-        background-color: #24582A;
-        color: #ffffff;
-        font-family: Arial, sans-serif;
-    }
-
-    #video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 500px;
-    }
-
-    #video {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    #controls {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #capture-btn,
-    #assign-btn,
-    #reset-btn {
-        margin: 0 10px;
-        background-color: #DDF832;
-        color: #000000;
-        border: none;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    #task-select {
-        margin: 0 10px;
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 4px;
-        background-color: #24582A;
-        color: #ffffff;
-    }
-</style>
-
 <body>
     <div id="video-container">
         <img id="video" src="{{ url_for('video') }}" alt="Video Feed">
@@ -79,9 +73,6 @@
         <li>{{ gesture }}: {{ task }}</li>
         {% endfor %}
     </ul>
-
-
-
     <script>
         const captureBtn = document.getElementById('capture-btn');
         const assignBtn = document.getElementById('assign-btn');
@@ -126,5 +117,4 @@
         });
     </script>
 </body>
-
 </html>

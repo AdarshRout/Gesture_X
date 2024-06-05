@@ -5,6 +5,7 @@ const collection = require("./config");
 const bodyParser = require('body-parser');
 const alert = require('alert');
 const { Script } = require('vm');
+const axios = require('axios');
 
 const app = express();
 
@@ -42,6 +43,19 @@ app.get("/signup", (req, res) => {
 // Serve the index.html file from the templates directory
 app.get('/index', (req, res) => {
   res.sendFile(path.join(__dirname, '../templates', 'index.html'));
+});
+
+
+
+// Rendering the server of the Gesture Recognition
+
+app.get('/fetch-data', async (req, res) => {
+    try {
+        res.send('<script>window.location.href = "http://127.0.0.1:5000"</script>');
+    } catch (error) {
+        console.error('Error fetching data from Flask:', error);
+        res.status(500).send('Error fetching data');
+    }
 });
 
 
