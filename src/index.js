@@ -3,6 +3,8 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const collection = require("./config");
 const bodyParser = require('body-parser');
+const alert = require('alert');
+const { Script } = require('vm');
 
 const app = express();
 
@@ -22,6 +24,10 @@ app.use('/scripts', express.static("scripts"));
 
 app.get("/", (req, res) => {
     res.render("home");
+});
+
+app.get("/after-login", (req, res) => {
+    res.render("after-login");
 });
 
 app.get("/login", (req, res) => {
@@ -49,7 +55,7 @@ app.post("/signup", async (req, res) => {
     const existingUser = await collection.findOne({ email: data.email });
 
     if (existingUser) {
-        res.send("User already exists. Choose a different username!");
+        res.send('<script>alert("User already exists! Please login"); window.location.href = "/login"</script>');
     }
     else {
 
@@ -61,7 +67,7 @@ app.post("/signup", async (req, res) => {
         data.password = hashPassword; //Replace the original password with hashed password
 
         const userdata = await collection.insertMany(data);
-        res.render("after-login");
+        res.send('<script>alert("Registration successful!"); window.location.href = "/after-login"</script>');
     }
 });
 
@@ -71,24 +77,23 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login", async (req, res) => {
     try {
+        // Finding the email entered from the database
+
         const check = await collection.findOne({email: req.body.email});
-        if(!check) {
-            res("Username cannot be found!");
-        }
 
         // Comparing the hashed password from database with the entered password
 
         const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
 
         if(isPasswordMatch) {
-            res.render("after-login");
+            res.send('<script>alert("Login successful!"); window.location.href = "/after-login"</script>');
         }
         else {
-            req.send("Check your password and try again!");
+            res.send('<script>alert("Check your password and try again!"); window.location.href = "/login"</script>');
         }
     }
     catch {
-        req.send(alert("Check your credentials!"));
+        res.send('<script>alert("User not found! Please register"); window.location.href = "/signup"</script>');
     }
 })
 
