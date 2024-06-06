@@ -8,7 +8,9 @@
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "html": "^1.0.0",
-    "mongoose": "^8.4.1"
+    "mongoose": "^8.4.1",
+    "node": "^20.14.0",
+    "npm": "^10.8.1"
   },
   "name": "gesturex",
   "version": "1.0.0",
