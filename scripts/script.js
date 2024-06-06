@@ -13,7 +13,7 @@ let logoSpan = document.querySelectorAll('.intro-logo');
 window.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
-        
+
         logoSpan.forEach((span, idx) => {
             setTimeout(() => {
                 span.classList.add('active1');
@@ -38,15 +38,24 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-app.get("/", (req, res) => {
-    res.render("home", {msg: req.flash("msg")});
-})
+// Rendering Signup page on clicking Register button
 
-
-
-function startNow() {
+function register() {
     window.location.href = '/signup'
 }
+
+
+// Rendering Login page on clicking Login button
+
+function login() {
+    window.location.href = '/login'
+}
+
+function startNow() {
+    window.location.href = "/fetch-data";
+}
+
+// Window onscroll active tabs change
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -55,7 +64,7 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('nav ul li a[href*=' + id + ']').classList.add('active');
@@ -64,8 +73,13 @@ window.onscroll = () => {
     })
 }
 
+
+
+
+// Menu button and Close button toggle
+
 function menuBtn() {
-    if(btn.classList.contains("fa-bars")) {
+    if (btn.classList.contains("fa-bars")) {
         btn.classList.replace("fa-bars", "fa-xmark");
         navbar.style.right = "0px";
     }
