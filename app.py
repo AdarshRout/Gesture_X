@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response, request
 import mediapipe as mp
 import cv2
 import os
+os.environ['DISPLAY'] = ':0'
 import subprocess
 import pyautogui
 import numpy as np
