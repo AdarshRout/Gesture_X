@@ -51,7 +51,7 @@ app.get('/index', (req, res) => {
 
 app.get('/fetch-data', async (req, res) => {
     try {
-        res.send('<script>window.location.href = "https://cbe6-2405-201-a003-c0b4-f55e-20df-acbe-97e2.ngrok-free.app"</script>');
+        res.send('<script>window.location.href = "http://127.0.0.1:5000"</script>');
     } catch (error) {
         console.error('Error fetching data from Flask:', error);
         res.status(500).send('Error fetching data');
