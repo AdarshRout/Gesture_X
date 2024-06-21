@@ -51,7 +51,7 @@ app.get('/index', (req, res) => {
 
 app.get('/fetch-data', async (req, res) => {
     try {
-        res.send('<script>window.location.href = "http://127.0.0.1:5000"</script>');
+        res.send('<script>window.location.href = "/index"</script>');
     } catch (error) {
         console.error('Error fetching data from Flask:', error);
         res.status(500).send('Error fetching data');
@@ -126,7 +126,7 @@ app.post("/login", async (req, res) => {
 
 // Localhost port connection
 
-const port = 8000;
+const port = 5000;
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
 });
