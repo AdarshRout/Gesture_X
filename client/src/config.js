@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connect = mongoose.connect('mongodb+srv://gesturex:gesturex123@gesturex.shgnajk.mongodb.net/?retryWrites=true&w=majority&appName=GestureX');
+const connect = mongoose.connect('mongodb+srv://gesturex:gesturex123@gesturex.shgnajk.mongodb.net/');
 
 
 
