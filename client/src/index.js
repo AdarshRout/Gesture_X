@@ -42,7 +42,7 @@ app.get("/signup", (req, res) => {
 
 // Serve the index.html file from the templates directory
 app.get('/index', (req, res) => {
-  res.sendFile(path.join(__dirname, '../templates', 'index.html'));
+  res.sendFile(path.join(__dirname, '../../server/templates', 'index.html'));
 });
 
 
@@ -51,7 +51,7 @@ app.get('/index', (req, res) => {
 
 app.get('/fetch-data', async (req, res) => {
     try {
-        res.send('<script>window.location.href = "/index"</script>');
+        res.send('<script>window.location.href = "http://192.168.0.115:5000"</script>');
     } catch (error) {
         console.error('Error fetching data from Flask:', error);
         res.status(500).send('Error fetching data');
@@ -126,7 +126,7 @@ app.post("/login", async (req, res) => {
 
 // Localhost port connection
 
-const port = 5000;
+const port = 8000;
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
 });
